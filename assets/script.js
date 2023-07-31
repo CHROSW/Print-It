@@ -43,10 +43,23 @@ switch(e.button){
 				if(listDot[elements].className == 'dot dot_selected'){ var nb=j}
 				j=j+1;
 			 };
-			 listDot[nb].className = 'dot';
-			 listDot[nb-1].className = 'dot dot_selected';
-			 var image = document.getElementsByClassName('banner-img');
-			 image[0].setAttribute('src', './assets/images/slideshow/' + slides[nb-1]['image']);
+			 if(nb-1 < 0){
+				listDot[nb].className = 'dot';
+			 	listDot[nbDots-1].className = 'dot dot_selected';
+			 	var image = document.getElementsByClassName('banner-img');
+				var blocSlider = document.getElementById('banner');
+				var paragraphe = blocSlider.getElementsByTagName('p');
+				image[0].setAttribute('src', './assets/images/slideshow/' + slides[nbDots-1]['image']);
+				paragraphe[0].innerHtml = slides[nbDots-1]['tagLine'];
+			 }else{
+			 	listDot[nb].className = 'dot';
+			 	listDot[nb-1].className = 'dot dot_selected';
+			 	var image = document.getElementsByClassName('banner-img');
+				 var blocSlider = document.getElementById('banner');
+				 var paragraphe = blocSlider.getElementsByTagName('p');
+			 	image[0].setAttribute('src', './assets/images/slideshow/' + slides[nb-1]['image']);
+				paragraphe[0].textContent = slides[nb-1]['tagLine'];
+			 }
 	break;
 	case 2 : console.log("Right Click");
 	break;
@@ -64,10 +77,25 @@ switch(e.button){
 				if(listDot[elements].className == 'dot dot_selected'){ var nb=j}
 				j=j+1;
 			 };
-			 listDot[nb].className = 'dot';
-			 listDot[nb+1].className = 'dot dot_selected';
-			 var image = document.getElementsByClassName('banner-img');
-			 image[0].setAttribute('src', './assets/images/slideshow/' + slides[nb+1]['image']);
+			 if(nb+1 == nbDots){
+				listDot[nb].className = 'dot';
+			 	listDot[0].className = 'dot dot_selected';
+			 	var image = document.getElementsByClassName('banner-img');
+				 var blocSlider = document.getElementById('banner');
+				 var paragraphe = blocSlider.getElementsByTagName('p');
+				console.log(paragraphe);
+				image[0].setAttribute('src', './assets/images/slideshow/' + slides[0]['image']);
+				paragraphe[0].textContent = slides[0]['tagLine'];
+			 }else{
+			 	listDot[nb].className = 'dot';
+			 	listDot[nb+1].className = 'dot dot_selected';
+			 	var image = document.getElementsByClassName('banner-img');
+				var blocSlider = document.getElementById('banner');
+				var paragraphe = blocSlider.getElementsByTagName('p');
+				console.log(paragraphe);
+			 	image[0].setAttribute('src', './assets/images/slideshow/' + slides[nb+1]['image']);
+				paragraphe[0].textContent = slides[nb+1]['tagLine'];
+			 }
 	break;
 	case 2 : console.log("Right Click");
 	break;
