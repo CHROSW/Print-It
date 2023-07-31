@@ -49,16 +49,22 @@ switch(e.button){
 			 	var image = document.getElementsByClassName('banner-img');
 				var blocSlider = document.getElementById('banner');
 				var paragraphe = blocSlider.getElementsByTagName('p');
+				var pspan = document.createElement('span');
 				image[0].setAttribute('src', './assets/images/slideshow/' + slides[nbDots-1]['image']);
 				paragraphe[0].innerText = slides[nbDots-1]['tagLine'].substring(0, slides[nbDots-1]['tagLine'].indexOf('<'));
+				pspan.innerText = slides[nbDots-1]['tagLine'].substring(slides[nbDots-1]['tagLine'].indexOf('<span>')+6, slides[nbDots-1]['tagLine'].indexOf('</span>'));
+				paragraphe[0].appendChild(pspan);
 			 }else{
 			 	listDot[nb].className = 'dot';
 			 	listDot[nb-1].className = 'dot dot_selected';
 			 	var image = document.getElementsByClassName('banner-img');
 				var blocSlider = document.getElementById('banner');
 				var paragraphe = blocSlider.getElementsByTagName('p');
+				var pspan = document.createElement('span');
 			 	image[0].setAttribute('src', './assets/images/slideshow/' + slides[nb-1]['image']);
 				paragraphe[0].innerText = slides[nb-1]['tagLine'].substring(0, slides[nb-1]['tagLine'].indexOf('<'));
+				pspan.innerText = slides[nb-1]['tagLine'].substring(slides[nb-1]['tagLine'].indexOf('<span>')+6, slides[nb-1]['tagLine'].indexOf('</span>'));
+				paragraphe[0].appendChild(pspan);
 			 }
 	break;
 	case 2 : console.log("Right Click");
@@ -83,18 +89,24 @@ switch(e.button){
 			 	var image = document.getElementsByClassName('banner-img');
 				var blocSlider = document.getElementById('banner');
 				var paragraphe = blocSlider.getElementsByTagName('p');
+				var pspan = document.createElement('span');
 				console.log(paragraphe);
 				image[0].setAttribute('src', './assets/images/slideshow/' + slides[0]['image']);
 				paragraphe[0].innerText = slides[0]['tagLine'].substring(0, slides[0]['tagLine'].indexOf('<'));
+				pspan.innerText = slides[0]['tagLine'].substring(slides[0]['tagLine'].indexOf('<span>')+6, slides[0]['tagLine'].indexOf('</span>'));
+				paragraphe[0].appendChild(pspan);
 			 }else{
 			 	listDot[nb].className = 'dot';
 			 	listDot[nb+1].className = 'dot dot_selected';
 			 	var image = document.getElementsByClassName('banner-img');
 				var blocSlider = document.getElementById('banner');
 				var paragraphe = blocSlider.getElementsByTagName('p');
+				var pspan = document.createElement('span');
 				console.log(paragraphe);
 			 	image[0].setAttribute('src', './assets/images/slideshow/' + slides[nb+1]['image']);
 				paragraphe[0].innerText = slides[nb+1]['tagLine'].substring(0, slides[nb+1]['tagLine'].indexOf('<'));
+				pspan.innerText = slides[nb+1]['tagLine'].substring(slides[nb+1]['tagLine'].indexOf('<span>')+6, slides[nb+1]['tagLine'].indexOf('</span>'));
+				paragraphe[0].appendChild(pspan);
 			 }
 	break;
 	case 2 : console.log("Right Click");
