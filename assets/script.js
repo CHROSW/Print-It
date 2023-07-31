@@ -50,7 +50,7 @@ switch(e.button){
 				var blocSlider = document.getElementById('banner');
 				var paragraphe = blocSlider.getElementsByTagName('p');
 				image[0].setAttribute('src', './assets/images/slideshow/' + slides[nbDots-1]['image']);
-				paragraphe[0].innerHtml = slides[nbDots-1]['tagLine'];
+				paragraphe[0].textContent = slides[nbDots-1]['tagLine'];
 			 }else{
 			 	listDot[nb].className = 'dot';
 			 	listDot[nb-1].className = 'dot dot_selected';
