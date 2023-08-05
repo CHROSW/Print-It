@@ -90,7 +90,6 @@ switch(e.button){
 				var blocSlider = document.getElementById('banner');
 				var paragraphe = blocSlider.getElementsByTagName('p');
 				var pspan = document.createElement('span');
-				console.log(paragraphe);
 				image[0].setAttribute('src', './assets/images/slideshow/' + slides[0]['image']);
 				paragraphe[0].innerHTML = slides[0]['tagLine'].substring(0, slides[0]['tagLine'].indexOf('<'));
 				pspan.innerHTML = slides[0]['tagLine'].substring(slides[0]['tagLine'].indexOf('<span>')+6, slides[0]['tagLine'].indexOf('</span>'));
